@@ -1,0 +1,3 @@
+rootProject.name = 'covid-19-stats-service'
+include 'covid-19-api'
+

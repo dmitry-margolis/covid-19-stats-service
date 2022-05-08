@@ -1,0 +1,7 @@
+client:
+  covid-19-api:
+    name: covid-19-api
+    url: https://covid-api.mmediagroup.fr/v1
+    caching:
+      ttl-in-minutes: 30
+      heap-size-in-mbytes: 10
