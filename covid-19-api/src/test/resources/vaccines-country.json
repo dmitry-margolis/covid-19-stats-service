@@ -1,0 +1,138 @@
+{
+  "All": {
+    "administered": 155613469,
+    "people_vaccinated": 52736639,
+    "people_partially_vaccinated": 54341767,
+    "country": "France",
+    "population": 64979548,
+    "sq_km_area": 551500,
+    "life_expectancy": "78.8",
+    "elevation_in_meters": 375,
+    "continent": "Europe",
+    "abbreviation": "FR",
+    "location": "Western Europe",
+    "iso": 250,
+    "capital_city": "Paris",
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Auvergne-Rhone Alps": {
+    "administered": 16436474,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Brittany": {
+    "administered": 7765158,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Burgundy-Free County": {
+    "administered": 5885037,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Centre-Loire Valley": {
+    "administered": 5648894,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Corsica": {
+    "administered": 633550,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "French Guiana": {
+    "administered": 227203,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "French Polynesia": {
+    "administered": 451811,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Great East": {
+    "administered": 11604056,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Guadeloupe": {
+    "administered": 372865,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Island of France": {
+    "administered": 24291594,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Loire Countries": {
+    "administered": 8550833,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Martinique": {
+    "administered": 379035,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "New Aquitaine": {
+    "administered": 13471452,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "New Caledonia": {
+    "administered": 459742,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Normandy": {
+    "administered": 7435879,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Occitania": {
+    "administered": 12389574,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Provence-Alps-Azure Coast": {
+    "administered": 10087124,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Unknown": {
+    "administered": 6170726,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Upper France": {
+    "administered": 12674286,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  },
+  "Wallis and Futuna": {
+    "administered": 16426,
+    "people_vaccinated": 0,
+    "people_partially_vaccinated": 0,
+    "updated": "2022/05/05 00:00:00+00"
+  }
+}
