@@ -5,12 +5,15 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Positive;
 
 @Component
-@Getter@ConfigurationProperties(prefix = "client.covid19-api")
+@ConfigurationProperties(prefix = "client.covid19-api")
+@Getter
 @Setter
+@Validated
 public class CovidApiProperties {
     private CachingProperties caching;
     private RetryProperties retry;
