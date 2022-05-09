@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -21,12 +22,18 @@ public class Covid19ApiCacheDecoratorImpl implements Covid19ApiClientV1 {
     @Override
     @Cacheable(cacheNames = CachingConfiguration.COVID_API_CACHE, key = "#root.method.name + #continent")
     public Map<String, CountryCasesDto> getCases(String continent) {
-        return covid19ApiClientV1.getCases(continent);
+        return covid19ApiClientV1.getCases(continent)
+                .entrySet().stream()
+                .filter(e -> e.getValue().getTotal().getCountry() != null)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
     @Override
     @Cacheable(cacheNames = CachingConfiguration.COVID_API_CACHE, key = "#root.method.name + #continent")
     public Map<String, CountryVaccinesDto> getVaccines(String continent) {
-        return covid19ApiClientV1.getVaccines(continent);
+        return covid19ApiClientV1.getVaccines(continent)
+                .entrySet().stream()
+                .filter(e -> e.getValue().getTotal().getCountry() != null)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 }

@@ -13,9 +13,9 @@ import lombok.Setter;
 @Schema(description = "Application error")
 public class ErrorDto {
     @Schema(title = "Error code", example = "INTERNAL_SERVER_ERROR")
-    private String code;
+    private String errorCode;
     @Schema(title = "Error message", example = "Internal server error")
-    private String message;
+    private String errorMessage;
 
     public static ErrorDto fromCode(ErrorCode code, Object ...params) {
         return new ErrorDto(code.getName(),

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 
 @FeignClient(
+        qualifiers = "Covid19ApiClientV1Feign",
         name = "${client.covid-19-api.name}-v1",
         url = "${client.covid-19-api.url}",
         primary = false

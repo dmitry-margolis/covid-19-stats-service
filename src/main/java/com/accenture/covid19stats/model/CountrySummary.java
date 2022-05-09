@@ -31,16 +31,21 @@ public class CountrySummary {
     @Schema(description = "Country vaccination rate percent")
     private BigDecimal vaccinationRatePercent;
 
-    public void calculateRates(MathContext mathContext) {
+    private static final BigDecimal HUNDRED = BigDecimal.valueOf(100);
+
+    public CountrySummary calculateRates(MathContext mathContext) {
         if(confirmed != 0) {
             fatalityRatePercent = BigDecimal.valueOf(deaths)
-                    .multiply(BigDecimal.valueOf(100))
-                    .divide(BigDecimal.valueOf(confirmed), mathContext);
+                    .multiply(HUNDRED)
+                    .divide(BigDecimal.valueOf(confirmed), mathContext)
+                    .min(HUNDRED);
         }
         if(vaccinated != null && population != null && population > 0) {
             vaccinationRatePercent = BigDecimal.valueOf(vaccinated)
-                    .multiply(BigDecimal.valueOf(100))
-                    .divide(BigDecimal.valueOf(population), mathContext);
+                    .multiply(HUNDRED)
+                    .divide(BigDecimal.valueOf(population), mathContext)
+                    .min(HUNDRED);
         }
+        return this;
     }
 }

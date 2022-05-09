@@ -2,7 +2,7 @@ package com.accenture.covid19stats.model.error;
 
 import org.springframework.http.HttpStatus;
 
-public enum ServiceErrorCode implements ErrorCode {
+public enum ErrorCodeEnum implements ErrorCode {
     INTERNAL_SERVER_ERROR("Internal server error: {0}"),
     VALIDATION_ERROR("Invalid request: {0}", HttpStatus.BAD_REQUEST),
 
@@ -11,12 +11,12 @@ public enum ServiceErrorCode implements ErrorCode {
     private final String messageTemplate;
     private HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
 
-    ServiceErrorCode(String messageTemplate, HttpStatus httpStatus) {
+    ErrorCodeEnum(String messageTemplate, HttpStatus httpStatus) {
         this.messageTemplate = messageTemplate;
         this.httpStatus = httpStatus;
     }
 
-    ServiceErrorCode(String messageTemplate) {
+    ErrorCodeEnum(String messageTemplate) {
         this.messageTemplate = messageTemplate;
     }
 
