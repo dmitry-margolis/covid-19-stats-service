@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "148e197a-a10e-482d-89f6-f28db48a2960",
+		"name": "covid-19-stats-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "countries-summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/analysis/summary?continent=Asia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"analysis",
+						"summary"
+					],
+					"query": [
+						{
+							"key": "continent",
+							"value": "Asia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vaccines-to-deaths-pcc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/analysis/vaccines-to-deaths-pcc?continent=Asia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"analysis",
+						"vaccines-to-deaths-pcc"
+					],
+					"query": [
+						{
+							"key": "continent",
+							"value": "Asia"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -4,8 +4,9 @@ import com.accenture.covid19stats.api.model.cases.CountryCasesDto;
 import com.accenture.covid19stats.model.CountrySummary;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface CountrySummaryMapper {
     @Mapping(target = "country", source = "total.country")
     @Mapping(target = "iso", source = "total.iso")

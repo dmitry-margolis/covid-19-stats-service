@@ -1,7 +1,14 @@
+server:
+  port: 8085
+
 client:
-  covid-19-api:
+  covid19-api:
     name: covid-19-api
     url: https://covid-api.mmediagroup.fr/v1
     caching:
       ttl-in-minutes: 30
-      heap-size-in-mbytes: 10
+      heap-entries: 4
+    retry:
+      max-attempts: 3
+      period-in-millis: 500
+      max-period-in-millis: 5000

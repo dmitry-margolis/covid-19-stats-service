@@ -10,8 +10,8 @@ import java.util.Map;
 
 @FeignClient(
         qualifiers = "Covid19ApiClientV1Feign",
-        name = "${client.covid-19-api.name}-v1",
-        url = "${client.covid-19-api.url}",
+        name = "${client.covid19-api.name}-v1",
+        url = "${client.covid19-api.url}",
         primary = false
 )
 public interface Covid19ApiClientV1 {

@@ -68,7 +68,10 @@ public class Covid19ApiAdapterImpl implements Covid19ApiAdapter {
 
                         return summary;
                     }).collect(Collectors.toList());
-        } catch (InterruptedException | ExecutionException e) {
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new ServiceBusinessException(ErrorCodeEnum.FETCHING_COVID19_API_ERROR, e);
+        } catch (ExecutionException e) {
             throw new ServiceBusinessException(ErrorCodeEnum.FETCHING_COVID19_API_ERROR, e);
         }
     }

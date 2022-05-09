@@ -27,7 +27,8 @@ public class CachingConfiguration {
     public static final String COVID_API_CACHE = "covidApiCache";
 
     @Bean
-    public CacheManager ehCacheManager(CachingApiProperties properties) {
+    public CacheManager ehCacheManager(CovidApiProperties covidApiProperties) {
+        CovidApiProperties.CachingProperties properties = covidApiProperties.getCaching();
         CachingProvider provider = Caching.getCachingProvider();
         CacheManager cacheManager = provider.getCacheManager();
 
@@ -40,7 +41,7 @@ public class CachingConfiguration {
                 CacheConfigurationBuilder.newCacheConfigurationBuilder(
                                 String.class,
                                 Object.class,
-                                ResourcePoolsBuilder.newResourcePoolsBuilder().heap(properties.getHeapSizeInMBytes(), MemoryUnit.MB))
+                                ResourcePoolsBuilder.heap(properties.getHeapEntries()))
                         .withExpiry(ExpiryPolicyBuilder.timeToLiveExpiration(Duration.ofMinutes(properties.getTtlInMinutes())))
                         .withService(eventListenerConfiguration)
                         .withService(new DefaultSizeOfEngineConfiguration(10, MemoryUnit.MB, 10000));
@@ -50,8 +51,8 @@ public class CachingConfiguration {
 
         cacheManager.createCache(COVID_API_CACHE, cacheConfiguration);
 
-        log.info("Configured covid api cache with ttl={}min, heap={}Mb",
-                properties.getTtlInMinutes(), properties.getHeapSizeInMBytes());
+        log.info("Configured covid api cache with ttl={}min, heap={}entries",
+                properties.getTtlInMinutes(), properties.getHeapEntries());
 
         return cacheManager;
     }
