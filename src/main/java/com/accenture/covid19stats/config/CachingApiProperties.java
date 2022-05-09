@@ -16,5 +16,4 @@ public class CachingApiProperties {
     int ttlInMinutes;
     @Positive
     int heapSizeInMBytes;
-
 }

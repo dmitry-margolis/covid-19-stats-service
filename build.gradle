@@ -26,9 +26,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation	'org.springframework:spring-context-support'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-
 	implementation "org.springdoc:springdoc-openapi-ui:${springdoc_version}"
 
 	implementation 'javax.cache:cache-api:1.1.1'
@@ -37,13 +35,16 @@ dependencies {
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'org.apache.commons:commons-math3:3.6.1'
 
-	// lombok
+	implementation "org.mapstruct:mapstruct:${mapstruct_version}"
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	testCompileOnly 'org.projectlombok:lombok'
-	testAnnotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstruct_version}"
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testCompileOnly 'org.projectlombok:lombok'
+	testImplementation "org.mapstruct:mapstruct:${mapstruct_version}"
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstruct_version}"
 }
 
 tasks.named('test') {

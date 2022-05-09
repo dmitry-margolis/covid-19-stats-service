@@ -33,7 +33,10 @@ class AnalysisControllerIT {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(182)));
+    }
 
+    @Test
+    void Get_country_summaries_for_Europe() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get(COUNTY_SUMMARIES_GET_API, "Europe")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -55,6 +58,7 @@ class AnalysisControllerIT {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.coefficient", is(-0.79)));
 
+        // caching, no new calls to covid19ApiClientV1
         verify(covid19ApiClientV1).getCases(null);
         verify(covid19ApiClientV1).getVaccines(null);
     }

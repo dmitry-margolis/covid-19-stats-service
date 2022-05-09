@@ -20,7 +20,8 @@ public class Covid19ApiCacheDecoratorImpl implements Covid19ApiClientV1 {
     private final Covid19ApiClientV1 covid19ApiClientV1;
 
     @Override
-    @Cacheable(cacheNames = CachingConfiguration.COVID_API_CACHE, key = "#root.method.name + #continent")
+    @Cacheable(cacheNames = CachingConfiguration.COVID_API_CACHE,
+            key = "#root.method.name + #continent", sync = true)
     public Map<String, CountryCasesDto> getCases(String continent) {
         return covid19ApiClientV1.getCases(continent)
                 .entrySet().stream()
@@ -29,7 +30,8 @@ public class Covid19ApiCacheDecoratorImpl implements Covid19ApiClientV1 {
     }
 
     @Override
-    @Cacheable(cacheNames = CachingConfiguration.COVID_API_CACHE, key = "#root.method.name + #continent")
+    @Cacheable(cacheNames = CachingConfiguration.COVID_API_CACHE,
+            key = "#root.method.name + #continent", sync = true)
     public Map<String, CountryVaccinesDto> getVaccines(String continent) {
         return covid19ApiClientV1.getVaccines(continent)
                 .entrySet().stream()

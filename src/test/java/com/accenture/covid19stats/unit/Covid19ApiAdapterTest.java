@@ -8,7 +8,7 @@ import com.accenture.covid19stats.api.client.Covid19ApiClientV1;
 import com.accenture.covid19stats.api.model.cases.CountryCasesDto;
 import com.accenture.covid19stats.api.model.cases.CountryCasesTotalDto;
 import com.accenture.covid19stats.api.model.vaccines.CountryVaccinesDto;
-import com.accenture.covid19stats.api.model.vaccines.CountryVaccinesTotalDto;
+import com.accenture.covid19stats.mapper.CountrySummaryMapperImpl;
 import com.accenture.covid19stats.model.CountryFilter;
 import com.accenture.covid19stats.model.CountrySummary;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -41,7 +41,8 @@ class Covid19ApiAdapterTest {
                 TestUtils.getTestDataFromJson("/vaccines-all.json", new TypeReference<>() {}));
 
         adapter = new Covid19ApiAdapterImpl(
-                new Covid19ApiCacheDecoratorImpl(covid19ApiClientV1));
+                    new Covid19ApiCacheDecoratorImpl(covid19ApiClientV1),
+                    new CountrySummaryMapperImpl());
     }
 
     @Test

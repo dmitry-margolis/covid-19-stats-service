@@ -6,6 +6,7 @@ public enum ErrorCodeEnum implements ErrorCode {
     INTERNAL_SERVER_ERROR("Internal server error: {0}"),
     VALIDATION_ERROR("Invalid request: {0}", HttpStatus.BAD_REQUEST),
 
+    FETCHING_COVID19_API_ERROR("Error fetching data from API"),
     NO_DATA_FOUND("Data not found for filter {0}", HttpStatus.NOT_FOUND);
 
     private final String messageTemplate;
