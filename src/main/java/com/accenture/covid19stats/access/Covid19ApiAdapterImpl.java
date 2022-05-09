@@ -36,16 +36,6 @@ public class Covid19ApiAdapterImpl implements Covid19ApiAdapter {
     }
 
     @Override
-    public Map<String, CountryCasesDto> getAllCases() {
-        return covid19ApiClient.getCases(null);
-    }
-
-    @Override
-    public Map<String, CountryVaccinesDto> getAllVaccines() {
-        return covid19ApiClient.getVaccines(null);
-    }
-
-    @Override
     public Map<String, CountryCasesDto> getCases(CountryFilter filter) {
         return getAllCases().entrySet().stream()
                 .filter(e -> filter.test(e.getValue().getTotal()))
@@ -81,5 +71,13 @@ public class Covid19ApiAdapterImpl implements Covid19ApiAdapter {
         } catch (InterruptedException | ExecutionException e) {
             throw new ServiceBusinessException(ErrorCodeEnum.FETCHING_COVID19_API_ERROR, e);
         }
+    }
+
+    private Map<String, CountryCasesDto> getAllCases() {
+        return covid19ApiClient.getCases(null);
+    }
+
+    private Map<String, CountryVaccinesDto> getAllVaccines() {
+        return covid19ApiClient.getVaccines(null);
     }
 }

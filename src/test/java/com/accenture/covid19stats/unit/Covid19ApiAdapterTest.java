@@ -47,7 +47,7 @@ class Covid19ApiAdapterTest {
 
     @Test
     void Get_all_cases() {
-        Map<String, CountryCasesDto> cases = adapter.getAllCases();
+        Map<String, CountryCasesDto> cases = adapter.getCases(new CountryFilter());
 
         assertNotNull(cases);
         assertEquals(182, cases.size());
@@ -79,7 +79,7 @@ class Covid19ApiAdapterTest {
 
     @Test
     void Get_all_vaccines() {
-        Map<String, CountryVaccinesDto> vaccines = adapter.getAllVaccines();
+        Map<String, CountryVaccinesDto> vaccines = adapter.getVaccines(new CountryFilter());
 
         assertNotNull(vaccines);
         assertEquals(174, vaccines.size());

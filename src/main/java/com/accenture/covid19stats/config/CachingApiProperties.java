@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Positive;
 
+/**
+ * Properties for covid-19 data caching configuration
+ */
+
 @Component
 @ConfigurationProperties(prefix = "client.covid-19-api.caching")
 @Getter

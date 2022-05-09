@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Decorator for caching data from Covid-19 API
+ */
 @Service
 @RequiredArgsConstructor
 @Primary
